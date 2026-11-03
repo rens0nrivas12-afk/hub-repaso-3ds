@@ -1,0 +1,48 @@
+:root {
+  --bg: #070a15;
+  --panel: #0f1630;
+  --cy: #22d3ee;
+  --tx: #e8edfb;
+  --mut: #9ba7ce;
+}
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--tx);
+  margin: 0;
+  padding: 20px;
+}
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+header h1 {
+  color: var(--cy);
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+.tarjeta-modulo {
+  background: var(--panel);
+  border: 1px solid #222c55;
+  border-left: 4px solid var(--cy);
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 15px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tarjeta-modulo h3 {
+  margin-top: 0;
+  color: var(--tx);
+}
+.badge {
+  display: inline-block;
+  background: rgba(34, 211, 238, 0.15);
+  color: var(--cy);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-top: 8px;
+}
