@@ -1,395 +1,98 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090c15">
   <title>HUB de Repaso 3.º DS «B»</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #070a1e;
-      color: #f1f5f9;
-      margin: 0;
-      padding: 0 0 40px 0;
-    }
-    header {
-      text-align: center;
-      padding: 40px 20px 20px;
-    }
-    header h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 2.5rem;
-      color: #38bdf8;
-      margin: 0 0 8px 0;
-    }
-    header p {
-      color: #94a3b8;
-      font-size: 1.05rem;
-      margin: 0;
-    }
-    .wrap {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    .titulo-seccion {
-      font-family: 'Space Grotesk', sans-serif;
-      text-align: center;
-      color: #c084fc;
-      font-size: 1.75rem;
-      margin-top: 20px;
-      margin-bottom: 6px;
-    }
-    .intro {
-      text-align: center;
-      color: #94a3b8;
-      font-size: 0.95rem;
-      margin-bottom: 30px;
-    }
-    .grid-modulos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 22px;
-      margin-top: 20px;
-    }
-    .tarjeta {
-      background: #0d152d;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 16px;
-      padding: 24px;
-      color: #f1f5f9;
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-    }
-    .badge-curso {
-      background: rgba(52, 211, 153, 0.12);
-      color: #34d399;
-      border: 1px solid rgba(52, 211, 153, 0.3);
-      padding: 3px 10px;
-      border-radius: 999px;
-      font-size: 0.72rem;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-    .caja-ejercicios {
-      background: rgba(3, 7, 18, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: 10px;
-      padding: 14px;
-      margin-bottom: 16px;
-    }
-    .caja-ejercicios span {
-      font-size: 0.75rem;
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .caja-ejercicios ul {
-      padding-left: 18px;
-      margin: 0;
-      font-size: 0.86rem;
-      color: #cbd5e1;
-      line-height: 1.6;
-    }
-    .herramientas-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .tag-herramienta {
-      background: rgba(255, 255, 255, 0.04);
-      padding: 3px 10px;
-      border-radius: 8px;
-      font-size: 0.78rem;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      font-weight: 500;
-    }
-  </style>
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-  <header>
-    <h1>HUB 3.º DS «B»</h1>
-    <p>Portal educativo de repaso integral - INDEL</p>
+  <header class="cabecera">
+    <div class="cabecera-contenido">
+      <div>
+        <p class="sobre-titulo">Portal educativo · INDEL</p>
+        <h1>HUB 3.º DS «B»</h1>
+        <p class="subtitulo">Tu espacio para organizar y repasar los módulos del año.</p>
+      </div>
+      <button class="boton-tema" id="alternar-tema" type="button" aria-label="Cambiar al modo claro" aria-pressed="false">
+        <span aria-hidden="true">☀</span>
+        <span class="texto-tema">Modo claro</span>
+      </button>
+    </div>
   </header>
 
-  <main>
-    <section class="wrap">
-      <h2 class="titulo-seccion">Módulos del Año y Actividades</h2>
-      <p class="intro">Listado ordenado por docente (Prof. Arcides Canales y Prof. Javier Mineros).</p>
-      
-      <div class="grid-modulos">
-
-        <!-- MÓDULO 1: PROF. ARCIDES CANALES -->
-        <div class="tarjeta" style="border-top: 3px solid #38bdf8;">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 10px;">
-            <h3 style="color: #38bdf8; font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; margin: 0; line-height: 1.35; font-weight: 700;">BTVDS 3.1: Desarrollo de Aplicaciones para la Solución de Problemas</h3>
-            <span class="badge-curso">En curso</span>
-          </div>
-          <p style="color: #94a3b8; font-size: 0.88rem; margin: 0 0 10px 0;"><strong style="color: #cbd5e1;">Docente:</strong> Prof. Arcides Canales</p>
-          <p style="color: #e2e8f0; font-size: 0.92rem; margin: 0 0 16px 0; line-height: 1.55;">Programación orientada a objetos, acceso a datos y ASP.NET Razor.</p>
-          
-          <div class="caja-ejercicios">
-            <span style="color: #38bdf8;">Ejercicios y Tareas Clave</span>
-            <ul>
-              <li>Práctica 1 y 2: POO Introducción, Herencia y Polimorfismo</li>
-              <li>Práctica 3 'A' Acceso a datos</li>
-              <li>Práctica 04 Creación de base de datos y conexión</li>
-              <li>Práctica 05 Code First - ASP Razor</li>
-            </ul>
-          </div>
-
-          <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 12px;">
-            <span style="font-size: 0.75rem; color: #94a3b8; display: block; margin-bottom: 8px; font-weight: 600;">Herramientas:</span>
-            <div class="herramientas-wrap">
-              <span class="tag-herramienta" style="color: #38bdf8;">C#</span>
-              <span class="tag-herramienta" style="color: #38bdf8;">ASP.NET Razor</span>
-              <span class="tag-herramienta" style="color: #38bdf8;">POO</span>
-              <span class="tag-herramienta" style="color: #38bdf8;">SQL</span>
-            </div>
-          </div>
+  <main class="wrap">
+    <section class="progreso-seccion" aria-labelledby="titulo-progreso">
+      <div class="progreso-encabezado">
+        <div>
+          <h2 id="titulo-progreso">Progreso del repaso</h2>
+          <p id="texto-progreso">0 de 9 módulos repasados</p>
         </div>
-
-        <!-- MÓDULO 2: PROF. ARCIDES CANALES -->
-        <div class="tarjeta" style="border-top: 3px solid #34d399;">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 10px;">
-            <h3 style="color: #34d399; font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; margin: 0; line-height: 1.35; font-weight: 700;">Módulo 3.3: Administración de Bases de Datos</h3>
-            <span class="badge-curso">Completado</span>
-          </div>
-          <p style="color: #94a3b8; font-size: 0.88rem; margin: 0 0 10px 0;"><strong style="color: #cbd5e1;">Docente:</strong> Prof. Arcides Canales</p>
-          <p style="color: #e2e8f0; font-size: 0.92rem; margin: 0 0 16px 0; line-height: 1.55;">Consultas SQL avanzadas, dashboards y Power BI.</p>
-          
-          <div class="caja-ejercicios">
-            <span style="color: #34d399;">Ejercicios y Tareas Clave</span>
-            <ul>
-              <li>Prácticas SQL (Día 1, Día 2, Día 3 y Semana 4 con Access)</li>
-              <li>Consultas de BD (Semana 2 Query BD)</li>
-              <li>Actividades de Power BI y creación de Dashboards en Excel</li>
-              <li>Ejecución final y actividades remediales</li>
-            </ul>
-          </div>
-
-          <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 12px;">
-            <span style="font-size: 0.75rem; color: #94a3b8; display: block; margin-bottom: 8px; font-weight: 600;">Herramientas:</span>
-            <div class="herramientas-wrap">
-              <span class="tag-herramienta" style="color: #34d399;">SQL</span>
-              <span class="tag-herramienta" style="color: #34d399;">MySQL</span>
-              <span class="tag-herramienta" style="color: #34d399;">SQLite</span>
-              <span class="tag-herramienta" style="color: #34d399;">Power BI</span>
-              <span class="tag-herramienta" style="color: #34d399;">Excel</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- MÓDULO 3: PROF. ARCIDES CANALES -->
-        <div class="tarjeta" style="border-top: 3px solid #c084fc;">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 10px;">
-            <h3 style="color: #c084fc; font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; margin: 0; line-height: 1.35; font-weight: 700;">Módulo 3.2: Mantenimiento y Aseguramiento de Sistemas</h3>
-            <span class="badge-curso">Completado</span>
-          </div>
-          <p style="color: #94a3b8; font-size: 0.88rem; margin: 0 0 10px 0;"><strong style="color: #cbd5e1;">Docente:</strong> Prof. Arcides Canales</p>
-          <p style="color: #e2e8f0; font-size: 0.92rem; margin: 0 0 16px 0; line-height: 1.55;">SLA, planes de contingencia y modelado UML.</p>
-          
-          <div class="caja-ejercicios">
-            <span style="color: #c084fc;">Ejercicios y Tareas Clave</span>
-            <ul>
-              <li>Modelado de software UML</li>
-              <li>Plantilla y aplicación de SLA</li>
-              <li>Semana 3: Monitoreo y registro de mantenimiento</li>
-              <li>Semana 6: Ejecución y planes de contingencia</li>
-            </ul>
-          </div>
-
-          <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 12px;">
-            <span style="font-size: 0.75rem; color: #94a3b8; display: block; margin-bottom: 8px; font-weight: 600;">Herramientas:</span>
-            <div class="herramientas-wrap">
-              <span class="tag-herramienta" style="color: #c084fc;">Plantillas SLA</span>
-              <span class="tag-herramienta" style="color: #c084fc;">UML</span>
-              <span class="tag-herramienta" style="color: #c084fc;">Monitoreo</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- MÓDULO 4: PROF. JAVIER MINEROS -->
-        <div class="tarjeta" style="border-top: 3px solid #f472b6;">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 10px;">
-            <h3 style="color: #f472b6; font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; margin: 0; line-height: 1.35; font-weight: 700;">Módulo 3.8: Proyecto Innovador de Desarrollo de Software</h3>
-            <span class="badge-curso">En curso</span>
-          </div>
-          <p style="color: #94a3b8; font-size: 0.88rem; margin: 0 0 10px 0;"><strong style="color: #cbd5e1;">Docente:</strong> Prof. Javier Mineros</p>
-          <p style="color: #e2e8f0; font-size: 0.92rem; margin: 0 0 16px 0; line-height: 1.55;">Aplicaciones multiplataforma y sistemas ERP con Python y Odoo.</p>
-          
-          <div class="caja-ejercicios">
-            <span style="color: #f472b6;">Ejercicios y Tareas Clave</span>
-            <ul>
-              <li>Guía Python Individual y apps con Python</li>
-              <li>Primer contacto con Avalonia UI y Flet</li>
-              <li>Odoo como sistema ERP</li>
-              <li>Avances de proyecto integrador (10% y 15%)</li>
-            </ul>
-          </div>
-
-          <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 12px;">
-            <span style="font-size: 0.75rem; color: #94a3b8; display: block; margin-bottom: 8px; font-weight: 600;">Herramientas:</span>
-            <div class="herramientas-wrap">
-              <span class="tag-herramienta" style="color: #f472b6;">Python</span>
-              <span class="tag-herramienta" style="color: #f472b6;">Avalonia UI</span>
-              <span class="tag-herramienta" style="color: #f472b6;">Flet</span>
-              <span class="tag-herramienta" style="color: #f472b6;">Odoo</span>
-              <span class="tag-herramienta" style="color: #f472b6;">Git</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- MÓDULO 5: PROF. JAVIER MINEROS -->
-        <div class="tarjeta" style="border-top: 3px solid #fbbf24;">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 10px;">
-            <h3 style="color: #fbbf24; font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; margin: 0; line-height: 1.35; font-weight: 700;">Módulo 3.4: Elaboración de Documentación de Sistemas</h3>
-            <span class="badge-curso">Completado</span>
-          </div>
-          <p style="color: #94a3b8; font-size: 0.88rem; margin: 0 0 10px 0;"><strong style="color: #cbd5e1;">Docente:</strong> Prof. Javier Mineros</p>
-          <p style="color: #e2e8f0; font-size: 0.92rem; margin: 0 0 16px 0; line-height: 1.55;">Arquitectura y manuales técnicos del software.</p>
-          
-          <div class="caja-ejercicios">
-            <span style="color: #fbbf24;">Ejercicios y Tareas Clave</span>
-            <ul>
-              <li>Fase 1 a Fase 4: Desarrollo y arquitectura del software</li>
-              <li>Fase 5 y documentos finales del sistema</li>
-              <li>Fases 6 y 7 de pruebas y entrega</li>
-              <li>Manual de sistema y ejercicio final</li>
-            </ul>
-          </div>
-
-          <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 12px;">
-            <span style="font-size: 0.75rem; color: #94a3b8; display: block; margin-bottom: 8px; font-weight: 600;">Herramientas:</span>
-            <div class="herramientas-wrap">
-              <span class="tag-herramienta" style="color: #fbbf24;">UML</span>
-              <span class="tag-herramienta" style="color: #fbbf24;">Documentación</span>
-              <span class="tag-herramienta" style="color: #fbbf24;">Diagramas</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- MÓDULO 6: INDEL -->
-        <div class="tarjeta" style="border-top: 3px solid #ff7849;">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 10px;">
-            <h3 style="color: #ff7849; font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; margin: 0; line-height: 1.35; font-weight: 700;">Módulo 2: Desarrollo de Componentes para Dispositivos Móviles</h3>
-            <span class="badge-curso">Completado</span>
-          </div>
-          <p style="color: #94a3b8; font-size: 0.88rem; margin: 0 0 10px 0;"><strong style="color: #cbd5e1;">Docente:</strong> INDEL</p>
-          <p style="color: #e2e8f0; font-size: 0.92rem; margin: 0 0 16px 0; line-height: 1.55;">Creación de interfaces y componentes para aplicaciones móviles.</p>
-          
-          <div class="caja-ejercicios">
-            <span style="color: #ff7849;">Ejercicios y Tareas Clave</span>
-            <ul>
-              <li>Práctica 06 y Práctica 7 Net Maui</li>
-              <li>Práctica 8 y 9 Net Maui</li>
-              <li>Autoevaluación Práctica 9</li>
-            </ul>
-          </div>
-
-          <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 12px;">
-            <span style="font-size: 0.75rem; color: #94a3b8; display: block; margin-bottom: 8px; font-weight: 600;">Herramientas:</span>
-            <div class="herramientas-wrap">
-              <span class="tag-herramienta" style="color: #ff7849;">.NET MAUI</span>
-              <span class="tag-herramienta" style="color: #ff7849;">C#</span>
-              <span class="tag-herramienta" style="color: #ff7849;">XAML</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- MÓDULO 7: INDEL -->
-        <div class="tarjeta" style="border-top: 3px solid #2dd4bf;">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 10px;">
-            <h3 style="color: #2dd4bf; font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; margin: 0; line-height: 1.35; font-weight: 700;">Módulo 3: Conversación de Inglés sobre Mantenimiento</h3>
-            <span class="badge-curso">En curso</span>
-          </div>
-          <p style="color: #94a3b8; font-size: 0.88rem; margin: 0 0 10px 0;"><strong style="color: #cbd5e1;">Docente:</strong> INDEL</p>
-          <p style="color: #e2e8f0; font-size: 0.92rem; margin: 0 0 16px 0; line-height: 1.55;">Términos técnicos, metodologías ágiles y bases de datos en inglés.</p>
-          
-          <div class="caja-ejercicios">
-            <span style="color: #2dd4bf;">Ejercicios y Tareas Clave</span>
-            <ul>
-              <li>Práctica 10 Scrum</li>
-              <li>Práctica 11 - Base de datos CRUD-IA</li>
-            </ul>
-          </div>
-
-          <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 12px;">
-            <span style="font-size: 0.75rem; color: #94a3b8; display: block; margin-bottom: 8px; font-weight: 600;">Herramientas:</span>
-            <div class="herramientas-wrap">
-              <span class="tag-herramienta" style="color: #2dd4bf;">Scrum</span>
-              <span class="tag-herramienta" style="color: #2dd4bf;">CRUD</span>
-              <span class="tag-herramienta" style="color: #2dd4bf;">IA</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- MÓDULO 8: INDEL -->
-        <div class="tarjeta" style="border-top: 3px solid #fb7185;">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 10px;">
-            <h3 style="color: #fb7185; font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; margin: 0; line-height: 1.35; font-weight: 700;">Módulo 4: Puesta en Marcha de la Empresa en Asociatividad Cooperativa</h3>
-            <span class="badge-curso">Completado</span>
-          </div>
-          <p style="color: #94a3b8; font-size: 0.88rem; margin: 0 0 10px 0;"><strong style="color: #cbd5e1;">Docente:</strong> INDEL</p>
-          <p style="color: #e2e8f0; font-size: 0.92rem; margin: 0 0 16px 0; line-height: 1.55;">Proyectos de desarrollo empresarial, Winform, ASPX y Arduino.</p>
-          
-          <div class="caja-ejercicios">
-            <span style="color: #fb7185;">Ejercicios y Tareas Clave</span>
-            <ul>
-              <li>Prestashop (Individual) 25% del módulo</li>
-              <li>Proyecto Final .net maui 25%</li>
-              <li>Proyecto Winform y aspx 25%</li>
-              <li>Proyecto Augustine-Arduino 25%</li>
-            </ul>
-          </div>
-
-          <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 12px;">
-            <span style="font-size: 0.75rem; color: #94a3b8; display: block; margin-bottom: 8px; font-weight: 600;">Herramientas:</span>
-            <div class="herramientas-wrap">
-              <span class="tag-herramienta" style="color: #fb7185;">Winform</span>
-              <span class="tag-herramienta" style="color: #fb7185;">ASPX</span>
-              <span class="tag-herramienta" style="color: #fb7185;">Arduino</span>
-              <span class="tag-herramienta" style="color: #fb7185;">Prestashop</span>
-              <span class="tag-herramienta" style="color: #fb7185;">.NET MAUI</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- MÓDULO 9: INDEL -->
-        <div class="tarjeta" style="border-top: 3px solid #a78bfa;">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 10px;">
-            <h3 style="color: #a78bfa; font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; margin: 0; line-height: 1.35; font-weight: 700;">Módulo 3.0: Orientación al Proceso Educativo</h3>
-            <span class="badge-curso">Completado</span>
-          </div>
-          <p style="color: #94a3b8; font-size: 0.88rem; margin: 0 0 10px 0;"><strong style="color: #cbd5e1;">Docente:</strong> INDEL</p>
-          <p style="color: #e2e8f0; font-size: 0.92rem; margin: 0 0 16px 0; line-height: 1.55;">Lineamientos iniciales y organización de equipos.</p>
-          
-          <div class="caja-ejercicios">
-            <span style="color: #a78bfa;">Ejercicios y Tareas Clave</span>
-            <ul>
-              <li>Creación de equipos de trabajo</li>
-              <li>Espacio para compartir códigos QR</li>
-              <li>Portafolio del Módulo 3.0</li>
-            </ul>
-          </div>
-
-          <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 12px;">
-            <span style="font-size: 0.75rem; color: #94a3b8; display: block; margin-bottom: 8px; font-weight: 600;">Herramientas:</span>
-            <div class="herramientas-wrap">
-              <span class="tag-herramienta" style="color: #a78bfa;">Portafolio</span>
-              <span class="tag-herramienta" style="color: #a78bfa;">Lineamientos</span>
-              <span class="tag-herramienta" style="color: #a78bfa;">Equipos</span>
-            </div>
-          </div>
-        </div>
-
+        <span id="porcentaje-progreso" aria-hidden="true">0%</span>
       </div>
+      <div
+        class="progreso-pista"
+        id="barra-progreso"
+        role="progressbar"
+        aria-label="Progreso general del repaso"
+        aria-valuemin="0"
+        aria-valuemax="9"
+        aria-valuenow="0"
+        aria-valuetext="0 de 9 módulos repasados">
+        <span class="progreso-relleno" id="progreso-relleno"></span>
+      </div>
+      <p class="ayuda-progreso">Responde correctamente una pregunta o registra el repaso de un módulo para avanzar.</p>
+      <p class="aviso-almacenamiento" id="aviso-almacenamiento" role="status" aria-live="polite" hidden></p>
+    </section>
+
+    <section class="seccion-modulos" aria-labelledby="titulo-modulos">
+      <div class="titulo-listado">
+        <div>
+          <h2 id="titulo-modulos">Módulos del año</h2>
+          <p>Busca por módulo, código o herramienta y filtra por docente o estado.</p>
+        </div>
+        <p class="contador-resultados" id="contador-resultados" aria-live="polite"></p>
+      </div>
+
+      <form class="controles-filtro" role="search" aria-label="Buscar y filtrar módulos" onsubmit="return false">
+        <div class="campo-busqueda">
+          <label for="buscar-modulos">Buscar módulos</label>
+          <input
+            id="buscar-modulos"
+            name="busqueda"
+            type="search"
+            placeholder="Título, código o herramienta…"
+            autocomplete="off"
+            aria-label="Buscar por título, código o herramienta">
+        </div>
+        <div class="campo-filtro">
+          <label for="filtro-docente">Docente</label>
+          <select id="filtro-docente" name="docente" aria-label="Filtrar por docente">
+            <option value="">Todos los docentes</option>
+          </select>
+        </div>
+        <div class="campo-filtro">
+          <label for="filtro-estado">Estado</label>
+          <select id="filtro-estado" name="estado" aria-label="Filtrar por estado">
+            <option value="">Todos los estados</option>
+          </select>
+        </div>
+        <button class="boton-limpiar" id="limpiar-filtros" type="button" aria-label="Limpiar búsqueda y filtros">Limpiar</button>
+      </form>
+
+      <p class="sin-resultados" id="sin-resultados" role="status" hidden>No hay módulos que coincidan con la búsqueda y los filtros.</p>
+      <div class="grid-modulos" id="contenedor-modulos" aria-live="polite" aria-busy="false"></div>
     </section>
   </main>
+
+  <footer class="pie-pagina">
+    <p>HUB de Repaso 3.º DS «B» · Versión 1.0</p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>
